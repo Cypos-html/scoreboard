@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goalscore counter</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="Pictures/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="index.js"></script>
     <header>
-        <h1>Florbal score</h1>
+        <h1>Floorball score</h1>
     </header>
-    <main>
-        <div class="scorebox">
+        <main>
+
+            <div class="scorebox">
 
             <button onclick="homeTeamScore()" id="homeTeam">
                 <p id="homescore">0</p>
@@ -42,7 +44,19 @@
             </script>
         </div>
         <div class="resetbox">
-            <button onclick="Re">reset</button>
+
+            <button onclick="resetScore()" id="resetbutton">RESET</button>
+
+            <script>
+                function resetScore() {
+                    homescore = 0;
+                    awayscore = 0;
+                    document.getElementById("homescore").innerHTML = homescore;
+                    document.getElementById("awayscore").innerHTML = awayscore;
+                    console.log("Home team score: " + homescore);
+                    console.log("Home team score: " + awayscore);
+                }
+            </script>
         </div>
     </main>
     <footer>
