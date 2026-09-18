@@ -38,11 +38,29 @@ main {
 }
 #homeTeam {
     color: hsl(0, 100%, 65%);
-    border: 4px solid hsl(0, 100%, 65%);
+    border: 8px solid hsl(0, 100%, 65%);
     border-radius: 15px;
 }
 #awayTeam {
     color: hsl(241, 100%, 65%);
-    border: 4px solid hsl(241, 100%, 65%);
+    border: 8px solid hsl(241, 100%, 65%);
+    border-radius: 15px;
+}
+.resetbox{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5%;
+    margin-right: 0.5%
+}
+.resetbox button{
+    width: 100%;
+    height: 10vh;
+
+    background-color: hsla(0, 0%, 0%, 0);
+    color: hsl(0, 0%, 80%);
+    font-size: clamp(1rem, 3vw, 100rem);
+    border: 4px solid hsl(0, 0%, 80%);
     border-radius: 15px;
 }
