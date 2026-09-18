@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goalscore counter</title>
+    <link rel="icon" type="image/png" href="Pictures/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Florbal score</h1>
+    </header>
+    <main>
+        <div class="scorebox">
+
+            <button onclick="homeTeamScore()" id="homeTeam">
+                <p id="homescore">0</p>
+            </button>
+
+            <button onclick="awayTeamScore()" id="awayTeam">
+                <p id="awayscore">0</p>
+            </button>
+
+            <script>
+
+                let homescore = 0
+                let awayscore = 0
+
+                function homeTeamScore(){
+                    homescore++;
+                    document.getElementById("homescore").innerHTML = homescore;
+                    console.log("Home team score: " + homescore);
+                    console.log("Type: " + typeof homescore);
+                }
+                function awayTeamScore() {
+                    awayscore++;
+                    document.getElementById("awayscore").innerHTML = awayscore;
+                    console.log("Home team score: " + awayscore);
+                    console.log("Type: " + typeof awayscore);
+                }
+            </script>
+        </div>
+        <div class="resetbox">
+            <button onclick="Re">reset</button>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
