@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <script src="index.js"></script>
-    <header>
-        <h1>Floorball score</h1>
-    </header>
-        <main>
 
-            <div class="scorebox">
+    <header><h1>Floorball score</h1></header>
+
+    <main>
+
+        <div class="scorebox">
 
             <button onclick="homeTeamScore()" id="homeTeam">
                 <p id="homescore">0</p>
@@ -25,7 +26,6 @@
             </button>
 
             <script>
-
                 let homescore = 0
                 let awayscore = 0
 
@@ -43,9 +43,12 @@
                 }
             </script>
         </div>
+
         <div class="resetbox">
 
-            <button onclick="resetScore()" id="resetbutton">RESET</button>
+            <button onclick="resetScore()" id="resetbutton">
+                RESET
+            </button>
 
             <script>
                 function resetScore() {
