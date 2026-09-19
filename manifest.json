@@ -1,0 +1,9 @@
+{
+    "name": "Scoreboard",
+    "short_name": "Scoreboard",
+    "start_url": "./",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff"
+}
