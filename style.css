@@ -64,9 +64,3 @@ main {
     border: 4px solid hsl(0, 0%, 80%);
     border-radius: 15px;
 }
-@media (orientation: portrait) {
-    .scorebox {
-        transform: rotate(90deg);
-        transform-origin: center;
-    }
-}
