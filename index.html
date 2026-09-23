@@ -64,14 +64,16 @@
                 function updateUndoButton() {
                     let backButton = document.getElementById("backButton");
                     let resetButton = document.getElementById("resetButton");
-
+                    let infoText = document.getElementById("infoText");
 
                     if (history.length === 0) {
                         backButton.style.display = "none";
                         resetButton.style.display = "none";
+                        infoText.style.display = "block";
                     } else {
                         backButton.style.display = "block";
                         resetButton.style.display = "block";
+                        infoText.style.display = "none";
                     }
                 }
 
@@ -94,7 +96,7 @@
             </button>
             <script>
                 function Undo() {
-                        let lastAction = history.pop();
+                    let lastAction = history.pop();
 
                         if (lastAction === "home") {
                             homescore--;
@@ -104,18 +106,21 @@
                             awayscore--;
                         }
 
-                        updateScore();
-                        updateUndoButton();
+                    updateScore();
+                    updateUndoButton();
 
-                        console.log(lastAction)
-                        console.log(history)
-                    }
+                    console.log(lastAction)
+                    console.log(history)
+                }
 
-                    function updateScore() {
-                            document.getElementById("homescore").innerHTML = homescore;
-                            document.getElementById("awayscore").innerHTML = awayscore;
-                    }
+                function updateScore() {
+                    document.getElementById("homescore").innerHTML = homescore;
+                    document.getElementById("awayscore").innerHTML = awayscore;
+                }
             </script>
+            <button id="infoText" style="display: block;">
+                For START press score button
+            </button>
         </div>
     </main>
     <footer>
