@@ -7,7 +7,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     
     <link rel="icon" type="image/png" href="Pictures/favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="manifest" href="manifest.json">
 
     <title>Goalscore counter</title>
@@ -31,39 +31,90 @@
             </button>
 
             <script>
-                let homescore = 0
-                let awayscore = 0
+                let homescore = 0;
+                let awayscore = 0;
+                let history = [];
 
                 function homeTeamScore(){
                     homescore++;
-                    document.getElementById("homescore").innerHTML = homescore;
+                    history.push("home");
+                    updateScore();
+                    updateUndoButton();
+
                     console.log("Home team score: " + homescore);
-                    console.log("Type: " + typeof homescore);
                 }
                 function awayTeamScore() {
                     awayscore++;
-                    document.getElementById("awayscore").innerHTML = awayscore;
-                    console.log("Home team score: " + awayscore);
-                    console.log("Type: " + typeof awayscore);
+                    history.push("away");
+                    updateScore();
+                    updateUndoButton();
+
+                    console.log("Away team score: " + awayscore);
                 }
             </script>
         </div>
 
         <div class="resetbox">
 
-            <button onclick="resetScore()" id="resetbutton">
+            <button onclick="resetScore()" id="resetButton" style="display: none;">
                 RESET
             </button>
 
             <script>
+                function updateUndoButton() {
+                    let backButton = document.getElementById("backButton");
+                    let resetButton = document.getElementById("resetButton");
+
+
+                    if (history.length === 0) {
+                        backButton.style.display = "none";
+                        resetButton.style.display = "none";
+                    } else {
+                        backButton.style.display = "block";
+                        resetButton.style.display = "block";
+                    }
+                }
+
                 function resetScore() {
                     homescore = 0;
                     awayscore = 0;
+                    history = [];
+                    updateUndoButton();
+
                     document.getElementById("homescore").innerHTML = homescore;
                     document.getElementById("awayscore").innerHTML = awayscore;
+                    
                     console.log("Home team score: " + homescore);
                     console.log("Home team score: " + awayscore);
+                    console.log(history)
                 }
+           </script>
+            <button onclick="Undo()" id="backButton" style="display: none;">
+                BACK
+            </button>
+            <script>
+                function Undo() {
+                        let lastAction = history.pop();
+
+                        if (lastAction === "home") {
+                            homescore--;
+                        }
+
+                        if (lastAction === "away") {
+                            awayscore--;
+                        }
+
+                        updateScore();
+                        updateUndoButton();
+
+                        console.log(lastAction)
+                        console.log(history)
+                    }
+
+                    function updateScore() {
+                            document.getElementById("homescore").innerHTML = homescore;
+                            document.getElementById("awayscore").innerHTML = awayscore;
+                    }
             </script>
         </div>
     </main>
