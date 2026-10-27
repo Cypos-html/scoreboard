@@ -11,6 +11,13 @@ header {
 h1 {
     margin: 0px;
 }
+#clock {
+    position: absolute;
+    top: 0px;
+    left: 1%;
+    font-size: 2rem;
+    color: white;
+}
 main {
     margin: 0px;
 }
@@ -62,7 +69,8 @@ main {
     border: 4px solid hsl(0, 0%, 80%);
     border-radius: 15px;
 }
-.resetbox button:hover{
+/*.resetbox button:hover{
     background-color: hsl(0, 0%, 20%);
     color: hsl(0, 100%, 50%);
 }
+*/
