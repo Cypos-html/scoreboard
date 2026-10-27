@@ -14,12 +14,12 @@
 </head>
 <body>
     
-    <script src="index.js"></script>
+    <header>
+        <div id="clock"></div>
+        <h1>Floorball score</h1>
+    </header>
 
-    <header><h1>Floorball score</h1></header>
-
-    <main>
-
+    <main>        
         <div class="scorebox">
 
             <button onclick="homeTeamScore()" id="homeTeam">
@@ -30,28 +30,6 @@
                 <p id="awayscore">0</p>
             </button>
 
-            <script>
-                let homescore = 0;
-                let awayscore = 0;
-                let history = [];
-
-                function homeTeamScore(){
-                    homescore++;
-                    history.push("home");
-                    updateScore();
-                    updateUndoButton();
-
-                    console.log("Home team score: " + homescore);
-                }
-                function awayTeamScore() {
-                    awayscore++;
-                    history.push("away");
-                    updateScore();
-                    updateUndoButton();
-
-                    console.log("Away team score: " + awayscore);
-                }
-            </script>
         </div>
 
         <div class="resetbox">
@@ -60,70 +38,21 @@
                 RESET
             </button>
 
-            <script>
-                function updateUndoButton() {
-                    let backButton = document.getElementById("backButton");
-                    let resetButton = document.getElementById("resetButton");
-                    let infoText = document.getElementById("infoText");
-
-                    if (history.length === 0) {
-                        backButton.style.display = "none";
-                        resetButton.style.display = "none";
-                        infoText.style.display = "block";
-                    } else {
-                        backButton.style.display = "block";
-                        resetButton.style.display = "block";
-                        infoText.style.display = "none";
-                    }
-                }
-
-                function resetScore() {
-                    homescore = 0;
-                    awayscore = 0;
-                    history = [];
-                    updateUndoButton();
-
-                    document.getElementById("homescore").innerHTML = homescore;
-                    document.getElementById("awayscore").innerHTML = awayscore;
-                    
-                    console.log("Home team score: " + homescore);
-                    console.log("Home team score: " + awayscore);
-                    console.log(history)
-                }
-           </script>
-            <button onclick="Undo()" id="backButton" style="display: none;">
+            <button onclick="back()" id="backButton" style="display: none;">
                 BACK
             </button>
-            <script>
-                function Undo() {
-                    let lastAction = history.pop();
 
-                        if (lastAction === "home") {
-                            homescore--;
-                        }
-
-                        if (lastAction === "away") {
-                            awayscore--;
-                        }
-
-                    updateScore();
-                    updateUndoButton();
-
-                    console.log(lastAction)
-                    console.log(history)
-                }
-
-                function updateScore() {
-                    document.getElementById("homescore").innerHTML = homescore;
-                    document.getElementById("awayscore").innerHTML = awayscore;
-                }
-            </script>
             <button id="infoText" style="display: block;">
                 For START press score button
             </button>
+            
         </div>
     </main>
+    
     <footer>
     </footer>
+
+    <script src="index.js"></script>
+
 </body>
 </html>
