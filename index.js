@@ -34,6 +34,10 @@ let awayscore = 0;
 let history = [];
 
 function homeTeamScore() {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(50);
+  }
+
   homescore++;
   history.push("home");
   updateScore();
@@ -42,6 +46,10 @@ function homeTeamScore() {
   console.log("Home team score: " + homescore);
 }
 function awayTeamScore() {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(50);
+  }
+
   awayscore++;
   history.push("away");
   updateScore();
@@ -67,6 +75,10 @@ function updateUndoButton() {
 }
 
 function resetScore() {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(50);
+  }
+
   homescore = 0;
   awayscore = 0;
   history = [];
@@ -81,6 +93,10 @@ function resetScore() {
 }
 
 function back() {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(50);
+  }
+
   let lastAction = history.pop();
 
   if (lastAction === "home") {
