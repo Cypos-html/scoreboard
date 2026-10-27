@@ -10,6 +10,7 @@ header {
 }
 h1 {
     margin: 0px;
+    height: 34px;
 }
 #clock {
     position: absolute;
@@ -72,5 +73,4 @@ main {
 /*.resetbox button:hover{
     background-color: hsl(0, 0%, 20%);
     color: hsl(0, 100%, 50%);
-}
-*/
+}*/
