@@ -63,6 +63,7 @@ main {
     width: 100%;
     height: 10dvh;
     margin: 0.5%;
+    margin-top: 0px;
 
     background-color: hsla(0, 0%, 0%, 0);
     color: hsl(0, 0%, 80%);
@@ -73,4 +74,5 @@ main {
 /*.resetbox button:hover{
     background-color: hsl(0, 0%, 20%);
     color: hsl(0, 100%, 50%);
-}*/
+}
+*/
